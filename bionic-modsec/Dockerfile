@@ -148,6 +148,7 @@ RUN cd /tmp \
     && tar xvzf v3.1.0.tar.gz --strip 1 \
     && mv rules /usr/local/modsecurity/crs-rules \
     && mkdir /usr/local/openresty/nginx/modsecurity.d/ \
+    && cp crs-setup.conf.example /usr/local/openresty/nginx/modsecurity.d/crs-setup.conf \
     && cp /opt/ModSecurity/modsecurity.conf-recommended /usr/local/openresty/nginx/modsecurity.d/modsecurity.conf \
     && mkdir -p /etc/nginx/conf.d \
     && wget -P /usr/local/openresty/nginx/modsecurity.d https://raw.githubusercontent.com/SpiderLabs/ModSecurity/v3/master/unicode.mapping \
